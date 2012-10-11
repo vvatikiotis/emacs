@@ -6,7 +6,7 @@
 
 
 (defvar my-local-shells
-  '("*shell*"))
+  '("*shell*" "*shell*<2>"))
 (defvar my-remote-shells
   '( ))
 (defvar my-shells (append my-local-shells my-remote-shells))

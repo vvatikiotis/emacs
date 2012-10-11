@@ -67,7 +67,7 @@ Semantic, and Ansi-Color faces are included.")
 
    ;; Mode line faces
 
-   '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width -1 :color "#6483af") :weight bold :height 115))))
+   '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width -1 :color "#6483af") :height 115))))
 
    `(mode-line-inactive ((,class
 			  (:box (:line-width -1 :style released-button)

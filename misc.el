@@ -91,16 +91,17 @@
 (delete-selection-mode 1)
 
 ;; font size matters!
-(if (equal window-system "x") 
+;; different font sizes for screen sizes
+(if (or (equal window-system "x") (equal window-system "ns"))
     (set-face-attribute 'default nil)
   (if (equal system-name "vael")
-      (set-frame-font "Inconsolata-13")
+      (set-frame-font "Menlo-12")
     )
-  (if (equal system-name "luminus")
-      (set-frame-font "Inconsolata-12")
+  (if (equal system-name "luminus.local")
+      (set-frame-font "Menlo-12")
     )
   (if (equal system-name "iit")
-      (set-frame-font "Inconsolata-13")
+      (set-frame-font "Menlo-12")
     )
   )
 
@@ -144,6 +145,13 @@
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green3")
+     (set-face-foreground 'magit-diff-del "red3")
+     (when (not window-system)
+       (set-face-background 'magit-item-highlight "black"))))
+
 ;;
 ;; we cannot have more than one custom-set-variables function,
 ;; sod this is a good place, for now.
@@ -157,14 +165,8 @@
  '(scss-sass-command "/Users/vatikiot/.rvm/gems/ruby-1.9.2-p290@sencha/bin/compass")
  '(scss-sass-options (quote ("compile")))
  '(flymake-jslint-command "/usr/local/bin/jslint")
+ '(ediff-split-window-function (quote split-window-horizontally))
  )
-
-(eval-after-load 'magit
-  '(progn
-     (set-face-foreground 'magit-diff-add "green3")
-     (set-face-foreground 'magit-diff-del "red3")
-     (when (not window-system)
-       (set-face-background 'magit-item-highlight "black"))))
 
 
 (custom-set-faces

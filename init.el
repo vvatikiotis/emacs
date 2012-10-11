@@ -17,6 +17,7 @@
 (require 'clojure-kit)
 (require 'ruby-kit)
 (require 'javascript-kit)
+(require 'coffeescript-kit)
 (require 'css-kit)
 (require 'scss-kit)
 (require 'markdown-kit)
