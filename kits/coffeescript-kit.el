@@ -4,17 +4,30 @@
 
 (defun coffee-custom ()
   "coffee-mode-hook"
-  (set (make-local-variable 'tab-width) 2))
+
+  (set (make-local-variable 'tab-width) 2)
+
+  (define-key coffee-mode-map (kbd "s-r") 'coffee-compile-buffer)
+
+  ;; Compile '.coffee' files on every save
+  (if buffer-file-name
+      (if (and (file-exists-p (buffer-file-name))(file-exists-p (coffee-compiled-file-name)))
+       (coffee-cos-mode t))
+    ) 
+  )
+
 
 (add-hook 'coffee-mode-hook
-          '(lambda () (coffee-custom)))
+          '(lambda () 
+             (coffee-custom)
+             ))
 (add-hook 'coffee-mode-hook 'esk-paredit-nonlisp)
 
-(eval-after-load 'coffee-mode
-  '(progn 
-     (define-key coffee-mode-map "{" 'paredit-open-curly)
-     (define-key coffee-mode-map "}" 'paredit-close-curly-and-newline)
-     ;; fixes problem with pretty function font-lock
-     ))
+;; (eval-after-load 'coffee-mode
+;;   '(progn 
+;;      (define-key coffee-mode-map "{" 'paredit-open-curly)
+;;      (define-key coffee-mode-map "}" 'paredit-close-curly-and-newline)
+;;      ;; fixes problem with pretty function font-lock
+;;      ))
 
 (provide 'coffeescript-kit)

@@ -166,6 +166,7 @@
  '(scss-sass-options (quote ("compile")))
  '(flymake-jslint-command "/usr/local/bin/jslint")
  '(ediff-split-window-function (quote split-window-horizontally))
+ '(coffee-command "/usr/local/share/npm/bin/coffee")
  )
 
 

@@ -6,7 +6,7 @@
     ("rb" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby")
     ("ruby-mode" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby")
 
-    ("coffee" . "/usr/local/share/npm/bin/coffee")
+    ("coffee-mode" . "/usr/local/share/npm/bin/coffee -e")
 
     ("clj" . "/Users/vatikiot/local/bin/clojure")
     ("clojure-mode" . "/Users/vatikiot/local/bin/clojure")))
