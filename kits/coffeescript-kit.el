@@ -1,6 +1,7 @@
 (autoload 'coffee-mode "coffee-mode" "Start coffee-mode" t)
 
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
 (defun coffee-custom ()
   "coffee-mode-hook"

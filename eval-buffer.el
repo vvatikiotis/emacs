@@ -3,8 +3,8 @@
     ("javascript-mode" . "/usr/local/bin/node -e")
     ("js-mode" . "/usr/local/bin/node -e")
 
-    ("rb" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby")
-    ("ruby-mode" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby")
+    ("rb" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby -e")
+    ("ruby-mode" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby -e")
 
     ("coffee-mode" . "/usr/local/share/npm/bin/coffee -e")
 
@@ -24,6 +24,7 @@
          )
     (if buffer-eval-command-pair
         (let ((command (concat (cdr buffer-eval-command-pair) " " "'" (buffer-string) "'")))
+          (message command)
           (shell-command-on-region (point-min) (point-max) command jw-eval-buffer-name nil)
           (pop-to-buffer jw-eval-buffer-name)
                                         ;(other-window 1)
