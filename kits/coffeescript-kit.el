@@ -12,9 +12,9 @@
 
   ;; Compile '.coffee' files on every save
   (if buffer-file-name
-      (if (and (file-exists-p (buffer-file-name))(file-exists-p (coffee-compiled-file-name)))
+      (if (file-exists-p (buffer-file-name))
        (coffee-cos-mode t))
-    ) 
+    )
   )
 
 
