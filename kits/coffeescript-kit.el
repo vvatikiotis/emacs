@@ -6,7 +6,7 @@
 (defun coffee-custom ()
   "coffee-mode-hook"
 
-  (set (make-local-variable 'tab-width) 2)
+  ;;(set (make-local-variable 'tab-width) 2)
 
   (define-key coffee-mode-map (kbd "s-r") 'coffee-compile-buffer)
 
@@ -17,12 +17,13 @@
     )
   )
 
-
 (add-hook 'coffee-mode-hook
           '(lambda () 
              (coffee-custom)
-             ))
+             )
+          )
 (add-hook 'coffee-mode-hook 'esk-paredit-nonlisp)
+(add-hook 'coffee-mode-hook 'flymake-coffee-load)
 
 ;; (eval-after-load 'coffee-mode
 ;;   '(progn 

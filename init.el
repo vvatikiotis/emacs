@@ -2,7 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d/kits")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'ruby-blue t)	;; t is no confirm flag
+(load-theme 'bastard t)	;; t is no confirm flag
 
 ; custom place to save customizations
 (setq custom-file "~/.emacs.d/misc.el")

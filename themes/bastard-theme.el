@@ -1,9 +1,8 @@
-;;; ruby-blue-theme.el --- Tango-based custom theme for faces
+;;; ruby-blue-theme.el --- Ruby blue custom theme for faces
 
 ;; Copyright (C) 2010-2012 Free Software Foundation, Inc.
 
-;; Authors: Chong Yidong <cyd@stupidchicken>
-;;          Jan Moringen <jan.moringen@uni-bielefeld.de>
+;; Authors: Vassilis Vatikiotis
 
 ;; This file is part of GNU Emacs.
 
@@ -22,12 +21,11 @@
 
 ;;; Commentary
 
-;; The colors in this theme come from the Tango palette, which is in
-;; the public domain: http://tango.freedesktop.org/
+;; Custom theme from the ruby-lang.org snippets.
 
 ;;; Code:
 
-(deftheme ruby-blue
+(deftheme bastard
   "Face colors using the Tango palette (dark background).
 Basic, Font Lock, Isearch, Gnus, Message, Ediff, Flyspell,
 Semantic, and Ansi-Color faces are included.")
@@ -48,48 +46,54 @@ Semantic, and Ansi-Color faces are included.")
       (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#212526"))
 
   (custom-theme-set-faces
-   'ruby-blue
+   'bastard
    ;; Ensure sufficient contrast on low-color terminals.
    `(default ((((class color) (min-colors 4096))
-	       (:foreground ,"#FFFFFF" :background , "#162433"))
+	       (:foreground ,"#FFFFFF" :background , "#1B1B1B"))
 	      (((class color) (min-colors 256))
 	       (:foreground ,alum-1 :background "#222"))
 	      (,class
 	       (:foreground ,alum-1 :background "black"))))
    `(cursor ((,class (:background ,butter-1))))
+
    ;; Highlighting faces
-   `(fringe ((,class (:background ,alum-7))))
-   `(highlight ((,class (:foreground ,alum-6 :background ,"#162433"))))
+   `(fringe ((,class (:background ,"#1B1B1B"))))
+   `(highlight ((,class (:foreground ,alum-6 :background ,"#ffffff"))))
    `(region ((,class (:background ,alum-5))))
    `(secondary-selection ((,class (:background ,blue-3))))
    `(isearch ((,class (:foreground ,alum-1 :background ,orange-3))))
    `(lazy-highlight ((,class (:background ,choc-3))))
    `(trailing-whitespace ((,class (:background ,red-3))))
+
    ;; Mode line faces
-   `(mode-line ((,class
-		 (:box (:line-width -1 :style released-button)
-		  :background ,alum-2 :foreground ,alum-6))))
+   '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width -1 :color "#6483af") :height 115))))
+
    `(mode-line-inactive ((,class
 			  (:box (:line-width -1 :style released-button)
-			   :background ,alum-5 :foreground ,alum-1))))
+                                :background ,"#C7C7C7" :foreground ,"black"))))
+
    ;; Escape and prompt faces
    `(minibuffer-prompt ((,class (:foreground ,cham-0))))
    `(escape-glyph ((,class (:foreground ,butter-3))))
    `(error ((,class (:foreground ,red-0))))
    `(warning ((,class (:foreground ,orange-1))))
    `(success ((,class (:foreground ,cham-1))))
+
    ;; Font lock faces
    `(font-lock-builtin-face ((,class (:foreground , "#D0D0FF"))))
+   `(font-lock-number-face ((,class (:foreground , "#4BA7A0"))))
    `(font-lock-comment-face ((,class (:foreground , "#428bdd" :italic t :slant italic))))
-   `(font-lock-constant-face ((,class (:foreground , "Gold"))))
-   `(font-lock-function-name-face ((,class (:foreground , "#FFFFFF"))))
-   `(font-lock-keyword-face ((,class (:foreground , "#CC7833"))))
+   `(font-lock-constant-face ((,class (:foreground , "#47A999"))))
+   `(font-lock-function-name-face ((,class (:foreground , "yellow"))))
+   `(font-lock-keyword-face ((,class (:foreground , "#F46E29"))))
    `(font-lock-string-face ((,class (:foreground , "#A5E177"))))
    `(font-lock-type-face ((,class (:foreground , "white" :bold t :weight bold))))
-   `(font-lock-variable-name-face ((,class (:foreground , "LightSteelBlue")))
+   `(font-lock-variable-name-face ((,class (:foreground , "LightSteelBlue"))))
+
    ;; Button and link faces
    `(link ((,class (:underline t :foreground ,blue-1))))
    `(link-visited ((,class (:underline t :foreground ,blue-2))))
+
    ;; Gnus faces
    `(gnus-group-news-1 ((,class (:foreground ,plum-1))))
    `(gnus-group-news-1-low ((,class (:foreground ,plum-2))))
@@ -114,6 +118,7 @@ Semantic, and Ansi-Color faces are included.")
    `(gnus-header-subject ((,class (:foreground ,cham-1))))
    `(gnus-header-name ((,class (:foreground ,blue-1))))
    `(gnus-header-newsgroups ((,class (:foreground ,choc-2))))
+
    ;; Message faces
    `(message-header-name ((,class (:foreground ,blue-1))))
    `(message-header-cc ((,class (:foreground ,butter-3))))
@@ -122,8 +127,10 @@ Semantic, and Ansi-Color faces are included.")
    `(message-header-to ((,class (:foreground ,butter-2))))
    `(message-cited-text ((,class (:foreground ,cham-1))))
    `(message-separator ((,class (:foreground ,plum-1))))
+
    ;; SMerge faces
    `(smerge-refined-change ((,class (:background ,blue-3))))
+
    ;; Ediff faces
    `(ediff-current-diff-A ((,class (:background ,alum-5))))
    `(ediff-fine-diff-A ((,class (:background ,blue-3))))
@@ -133,9 +140,18 @@ Semantic, and Ansi-Color faces are included.")
    `(ediff-fine-diff-B ((,class (:background ,choc-3))))
    `(ediff-even-diff-B ((,class (:background ,alum-5.5))))
    `(ediff-odd-diff-B ((,class (:background ,alum-5.5))))
+
+   ;; Magit
+   `(magit-item-highlight ((t (:background ,"#2b2b2b" :foreground "#FFFFFF"))))
+   `(magit-section-title ((,class (:foreground ,"#f0dfaf" :weight bold))))
+   `(magit-branch ((,class (:foreground ,"#dfaf8f" :weight bold))))
+
    ;; Flyspell faces
    `(flyspell-duplicate ((,class (:underline ,orange-1))))
    `(flyspell-incorrect ((,class (:underline ,red-1))))
+   ;; Flymake
+   ;;(flymake-errline ((,class (:background ,"LightSalmon" :foreground ,"black"))))
+
    ;; Semantic faces
    `(semantic-decoration-on-includes ((,class (:underline ,alum-4))))
    `(semantic-decoration-on-private-members-face
@@ -150,14 +166,14 @@ Semantic, and Ansi-Color faces are included.")
    `(semantic-unmatched-syntax-face ((,class (:underline ,red-1)))))
 
   (custom-theme-set-variables
-   'ruby-blue
+   'bastard
    `(ansi-color-names-vector [,alum-7 ,red-0 ,cham-0 ,butter-1
 			      ,blue-1 ,plum-1 ,blue-0 ,alum-1])))
 
-(provide-theme 'ruby-blue)
+(provide-theme 'bastard)
 
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:
 
-;;; ruby-blue-theme.el ends here
+;;; bastard-theme.el ends here
