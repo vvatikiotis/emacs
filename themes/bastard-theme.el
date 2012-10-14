@@ -21,17 +21,15 @@
 
 ;;; Commentary
 
-;; Custom theme from the ruby-lang.org snippets.
-
 ;;; Code:
 
 (deftheme bastard
-  "Face colors using the Tango palette (dark background).
+  "Custom colors from the ruby-lang.org snippets plus various tweaks (dark background).
 Basic, Font Lock, Isearch, Gnus, Message, Ediff, Flyspell,
 Semantic, and Ansi-Color faces are included.")
 
 (let ((class '((class color) (min-colors 89)))
-      ;; Tango palette colors.
+      ;; palette colors.
       (butter-1 "#fce94f") (butter-2 "#edd400") (butter-3 "#c4a000")
       (orange-1 "#fcaf3e") (orange-2 "#f57900") (orange-3 "#ce5c00")
       (choc-1 "#e9b96e") (choc-2 "#c17d11") (choc-3 "#8f5902")
@@ -67,10 +65,8 @@ Semantic, and Ansi-Color faces are included.")
 
    ;; Mode line faces
    '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width -1 :color "#6483af") :height 115))))
-
-   `(mode-line-inactive ((,class
-			  (:box (:line-width -1 :style released-button)
-                                :background ,"#C7C7C7" :foreground ,"black"))))
+   `(mode-line-inactive ((,class (:box (:line-width -1 :style released-button) 
+                                       :background ,"#C7C7C7" :foreground ,"black"))))
 
    ;; Escape and prompt faces
    `(minibuffer-prompt ((,class (:foreground ,cham-0))))
