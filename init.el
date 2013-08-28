@@ -35,7 +35,9 @@
 
 ;;
 ;; el4r requires to rvm-activate the right ruby
-(require 'xiki)
-(rvm-activate-corresponding-ruby)
+;(require 'xiki)
+;(rvm-activate-corresponding-ruby)
 ;;(el4r-boot)
 
+; visit directories in the same buffer
+(put 'dired-find-alternate-file 'disabled nil)
