@@ -1,3 +1,3 @@
-(setq tramp-default-method "scp")
+;(setq tramp-default-method "scp")
 
 (provide 'tramp-kit)

@@ -13,7 +13,7 @@
 
 (require 'rvm)
 (require 'flymake-ruby)
-(require 'ruby-block)
+;(require 'ruby-block)
 (require 'ruby-electric)
 
 (add-hook 'ruby-mode-hook

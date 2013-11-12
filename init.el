@@ -21,9 +21,6 @@
 (require 'css-kit)
 (require 'scss-kit)
 (require 'markdown-kit)
-; nXhtml
-(load "/Users/vatikiot/.emacs.d/kits/nxhtml/autostart.el")
-(require 'html-kit)
 
 (require 'eval-buffer)
 (require 'eshell-kit)
@@ -32,6 +29,10 @@
 (require 'compilation-mode-kit)
 
 (require 'tramp-kit)
+
+; nXhtml
+;(load "/Users/vatikiot/.emacs.d/kits/nxhtml/autostart.el")
+(require 'html-kit)
 
 ;;
 ;; el4r requires to rvm-activate the right ruby
