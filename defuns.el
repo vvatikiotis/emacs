@@ -92,7 +92,7 @@ Symbols matching the text at point are put first in the completion list."
 
 (defun add-watchwords ()
   (font-lock-add-keywords 
-   nil '(("\\<\\(FIX\\|FIXME\\|SEE\\|WATCH\\|TODO\\|FIXME\\|HACK\\|NOTE\\|BUG\\|REFACTOR\\):" 1 font-lock-warning-face t))))
+   nil '(("\\<\\(FIX\\|FIXME\\|SEE\\|WATCH\\|TODO\\|FIXME\\|HACK\\|NOTE\\|BUG\\|REFACTOR\\):" 1 font-lock-function-name-face t))))
 
 (add-hook 'coding-hook 'local-column-number-mode)
 (add-hook 'coding-hook 'local-comment-auto-fill)
@@ -110,6 +110,7 @@ Symbols matching the text at point are put first in the completion list."
   
 (defun run-coding-hook ()
   "Enable things that are convenient across all coding buffers."
+  (interactive)
   (run-hooks 'coding-hook))
 
 (defun untabify-buffer ()

@@ -166,7 +166,6 @@
  '(custom-safe-themes (quote ("0025f6995ccf2f0ee680c03e313c3cf1a4a93b9af9a740fc21c9e7cf20da4c4f" "da5a4e12964ed4c1e8fd7a52371c2cc5abf1f10b8f3c78da29f617411e9032ba" "2653101d267546b4cf6b76fa47e42604377aebf111a121ed71a7fd3d65cf43d7" default)))
  '(ediff-split-window-function (quote split-window-horizontally))
  '(explicit-shell-file-name "/usr/local/bin/bash")
- '(flymake-jslint-command "/usr/local/bin/jslint")
  '(scss-sass-command "/Users/vatikiot/.rvm/gems/ruby-1.9.2-p290@sencha/bin/compass")
  '(scss-sass-options (quote ("compile")))
  '(coffee-tab-width 2)

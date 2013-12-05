@@ -1,16 +1,28 @@
+;;; init.el --- Summary
+
+;;; Commentary:
+
+;;; Code:
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/kits")
+
+;; emacs-repos declares the package repos
+;; place it first!
+(require 'emacs-repos)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'bastard t)	;; t is no confirm flag
 
-; custom place to save customizations
 (setq custom-file "~/.emacs.d/misc.el")
 (when (file-exists-p custom-file) (load custom-file))
 
-(require 'emacs-repos)
+;; set emacs exec-path to shell's PATH
+;; M-: (executable-find "executable") to determine whether emacs can "see" it
+;;(when (memq window-system '(mac ns))
+(exec-path-from-shell-initialize)
+;;)
 
-(require 'key-bindings)
+
 (require 'defuns)
 
 (require 'emacs-lisp-kit)
@@ -30,8 +42,6 @@
 
 (require 'tramp-kit)
 
-; nXhtml
-;(load "/Users/vatikiot/.emacs.d/kits/nxhtml/autostart.el")
 (require 'html-kit)
 
 ;;
@@ -42,3 +52,14 @@
 
 ; visit directories in the same buffer
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; put this last as we want our bindings to mask others
+(require 'key-bindings)
+
+;; flychek stuff
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load "flycheck"
+  '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
+
+(provide 'init)
+;;; init.el ends here

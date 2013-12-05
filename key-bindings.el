@@ -1,3 +1,22 @@
+;; We swap first Command-Meta keys
+;; mac switch meta key
+(defun mac-switch-meta nil 
+  "switch meta between Option and Command"
+  (interactive)
+  (if (eq mac-option-modifier 'hyper)
+    (progn
+      (setq mac-option-modifier 'meta)
+      (setq mac-command-modifier 'hyper)
+    )
+    (progn 
+      (setq mac-option-modifier 'hyper) 
+      (setq mac-command-modifier 'meta)
+    )
+  )
+)
+;(mac-switch-meta)
+
+
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
@@ -6,6 +25,25 @@
 (global-set-key (kbd "S-<down>") 'windmove-down)
 (global-set-key (kbd "S-<right>") 'windmove-right)
 (global-set-key (kbd "S-<left>") 'windmove-left)
+
+;; scroll a few lines
+(defun move-down-lines ()
+  "Scroll down a few lines"
+  (interactive)
+  (next-line)(next-line)(next-line)(next-line)(next-line)(next-line))
+(defun move-up-lines ()
+  "Scroll up a few lines"
+  (interactive)
+  (previous-line) (previous-line) (previous-line) (previous-line) (previous-line) (previous-line))
+(global-set-key (kbd "M-<up>") 'move-up-lines )
+(global-set-key (kbd "M-<down>") 'move-down-lines)
+;; and unset paredit key-bindings that shadow the 2 previous ones
+(eval-after-load "paredit"
+  '(progn
+      (define-key paredit-mode-map (kbd "M-<up>") nil)
+      (define-key paredit-mode-map (kbd "M-<down>") nil)
+      ))
+
 
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
@@ -37,21 +75,6 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; mac switch meta key
-(defun mac-switch-meta nil 
-  "switch meta between Option and Command"
-  (interactive)
-  (if (eq mac-option-modifier nil)
-    (progn
-      (setq mac-option-modifier 'meta)
-      (setq mac-command-modifier 'hyper)
-    )
-    (progn 
-      (setq mac-option-modifier nil)
-      (setq mac-command-modifier 'meta)
-    )
-  )
-)
-(mac-switch-meta)
 
 (provide 'key-bindings)
+;;; key-bindings ends here

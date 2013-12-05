@@ -12,15 +12,15 @@
 
 
 (require 'rvm)
-(require 'flymake-ruby)
+;(require 'flymake-ruby)
 ;(require 'ruby-block)
 (require 'ruby-electric)
 
 (add-hook 'ruby-mode-hook
 	  (lambda ()
 	    (rvm-activate-corresponding-ruby)
-	    ;(flymake-mode t)
 	    (ruby-electric-mode t)
+            (run-coding-hook)
 	    ;(ruby-block-mode t)
 	    )
 	  )
