@@ -29,28 +29,4 @@
                                             (match-end 1) "ƒ")
                             nil)))))))
 
-;; Flymake stuff
-;(require 'flymake-jslint)
-
-;;(require 'flymake-js)
-;;(add-hook 'js-mode-hook 'flymake-jslint-load)
-
-;; (when (load "flymake" t)
-;;   (defun flymake-jslint-init ()
-;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;; 		       'flymake-create-temp-inplace))
-;;            (local-file (file-relative-name
-;;                         temp-file
-;;                         (file-name-directory buffer-file-name))))
-;;       (list "jslint" (list local-file))))
-  
-;;   (setq flymake-err-line-patterns 
-;; 	(cons '("^  [[:digit:]]+ \\([[:digit:]]+\\),\\([[:digit:]]+\\): \\(.+\\)$"  
-;; 		nil 1 2 3)
-;; 	      flymake-err-line-patterns))
-  
-;;   (add-to-list 'flymake-allowed-file-name-masks
-;;                '("\\.js\\'" flymake-jslint-init)))
-;; end flymake stuff
-
 (provide 'javascript-kit)

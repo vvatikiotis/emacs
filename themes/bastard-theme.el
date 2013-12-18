@@ -56,15 +56,15 @@ Semantic, and Ansi-Color faces are included.")
 
    ;; Highlighting faces
    `(fringe ((,class (:background ,"#1B1B1B"))))
-   `(highlight ((,class (:foreground ,alum-6 :background ,"#ffffff"))))
-   `(region ((,class (:background ,alum-5))))
-   `(secondary-selection ((,class (:background ,blue-3))))
+   `(secondary-selection ((,class (:foreground ,alum-6 :background ,"#ffffff"))))
+   `(region ((,class (:background ,blue-3))))
+   `(highlight ((,class (:background ,blue-3))))
    `(isearch ((,class (:foreground ,alum-1 :background ,orange-3))))
    `(lazy-highlight ((,class (:background ,choc-3))))
    `(trailing-whitespace ((,class (:background ,red-3))))
 
    ;; Mode line faces
-   '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width -1 :color "#6483af") :height 115))))
+   '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width 1 :color "#6483af") :height 115))))
    `(mode-line-inactive ((,class (:box (:line-width -1 :style released-button) 
                                        :background ,"#C7C7C7" :foreground ,"black"))))
 
