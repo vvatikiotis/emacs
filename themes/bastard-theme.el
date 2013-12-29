@@ -64,7 +64,7 @@ Semantic, and Ansi-Color faces are included.")
    `(trailing-whitespace ((,class (:background ,red-3))))
 
    ;; Mode line faces
-   '(mode-line ((t (:background "#6483af" :foreground "black" :box (:line-width 1 :color "#6483af") :height 115))))
+   '(mode-line ((t (:background "green" :foreground "black" :box (:line-width 1 :color "#6483af") :height 115))))
    `(mode-line-inactive ((,class (:box (:line-width -1 :style released-button) 
                                        :background ,"#C7C7C7" :foreground ,"black"))))
 

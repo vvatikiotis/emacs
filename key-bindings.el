@@ -21,6 +21,8 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 ;; jumping to windows
+;;http://lists.gnu.org/archive/html/help-gnu-emacs/2011-05/msg00211.html
+(define-key input-decode-map "\e[1;2A" [S-up])
 (global-set-key (kbd "S-<up>") 'windmove-up)
 (global-set-key (kbd "S-<down>") 'windmove-down)
 (global-set-key (kbd "S-<right>") 'windmove-right)
@@ -74,6 +76,20 @@
 (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+
+
+;;  GNU Emacs in Terminal + OS X 
+(defun copy-from-osx ()
+  (shell-command-to-string "pbpaste"))
+
+(defun paste-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-paste-function 'copy-from-osx)
 
 
 (provide 'key-bindings)
