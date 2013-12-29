@@ -61,5 +61,8 @@
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
+;; pair programming mode
+(require 'lockstep)
+
 (provide 'init)
 ;;; init.el ends here
