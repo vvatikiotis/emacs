@@ -1,4 +1,4 @@
-;;; ruby-blue-theme.el --- Ruby blue custom theme for faces
+;;; bastard-theme.el --- Inspired from Ruby blue
 
 ;; Copyright (C) 2010-2012 Free Software Foundation, Inc.
 
@@ -19,7 +19,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Commentary
+;;; Commentary:
 
 ;;; Code:
 
@@ -63,9 +63,9 @@ Semantic, and Ansi-Color faces are included.")
    `(lazy-highlight ((,class (:background ,choc-3))))
    `(trailing-whitespace ((,class (:background ,red-3))))
 
-   ;; Mode line faces
-   '(mode-line ((t (:background "green" :foreground "black" :box (:line-width 1 :color "#6483af") :height 115))))
-   `(mode-line-inactive ((,class (:box (:line-width -1 :style released-button) 
+   ;; Mode line faces #6483af
+   '(mode-line ((t (:background "#007F00" :foreground "black" :box (:line-width 1 :color "black") :height 100))))
+   `(mode-line-inactive ((,class (:box (:line-width -1 :style released-button)
                                        :background ,"#C7C7C7" :foreground ,"black"))))
 
    ;; Escape and prompt faces

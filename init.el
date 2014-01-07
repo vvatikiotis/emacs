@@ -22,8 +22,8 @@
 (exec-path-from-shell-initialize)
 ;;)
 
+(require 'mode-line-format)
 (require 'defuns)
-
 (require 'emacs-lisp-kit)
 (require 'clojure-kit)
 (require 'ruby-kit)
@@ -32,15 +32,11 @@
 (require 'css-kit)
 (require 'scss-kit)
 (require 'markdown-kit)
-
 (require 'eval-buffer)
 (require 'eshell-kit)
 (require 'shell-modes)
-
 (require 'compilation-mode-kit)
-
 (require 'tramp-kit)
-
 (require 'html-kit)
 
 ;;
