@@ -49,7 +49,7 @@ Semantic, and Ansi-Color faces are included.")
    `(default ((((class color) (min-colors 4096))
 	       (:foreground ,"#FFFFFF" :background , "#1B1B1B"))
 	      (((class color) (min-colors 256))
-	       (:foreground ,alum-1 :background "#222"))
+	       (:foreground ,alum-1 :background "111111"))
 	      (,class
 	       (:foreground ,alum-1 :background "black"))))
    `(cursor ((,class (:background ,butter-1))))

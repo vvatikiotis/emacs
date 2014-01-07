@@ -8,7 +8,7 @@
 
 ;; emacs-repos declares the package repos
 ;; place it first!
-(require 'emacs-repos)
+(load-library "emacs-repos") ;; looks up in the load-path var
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'bastard t)	;; t is no confirm flag
@@ -21,7 +21,6 @@
 ;;(when (memq window-system '(mac ns))
 (exec-path-from-shell-initialize)
 ;;)
-
 
 (require 'defuns)
 
@@ -56,10 +55,7 @@
 ;; put this last as we want our bindings to mask others
 (require 'key-bindings)
 
-;; flychek stuff
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(eval-after-load "flycheck"
-  '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
+(require 'flycheck-kit)
 
 ;; pair programming mode
 (require 'lockstep)

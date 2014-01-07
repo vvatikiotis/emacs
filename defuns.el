@@ -1,6 +1,9 @@
-;;; starter-kit-defuns.el --- Define some custom functions
+;;; defuns.el --- Define some custom functions
 ;;
 ;; Part of the Emacs Starter Kit
+;;; Commentary:
+
+;;; Code:
 
 (require 'thingatpt)
 (require 'imenu)
@@ -243,4 +246,4 @@ Symbols matching the text at point are put first in the completion list."
     (vc-git-command buf 0 name "blame" "-w" rev)))
 
 (provide 'defuns)
-;;; starter-kit-defuns.el ends here
+;;; defuns.el ends here

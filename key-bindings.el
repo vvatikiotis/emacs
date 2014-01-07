@@ -64,7 +64,8 @@
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;; File finding
-(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+;(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-x f") 'find-file-in-project)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Help should search more than just commands
