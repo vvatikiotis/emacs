@@ -139,9 +139,9 @@ Semantic, and Ansi-Color faces are included.")
    `(ediff-odd-diff-B ((,class (:background ,alum-5.5))))
 
    ;; Magit
-   `(magit-item-highlight ((t (:background ,"#2b2b2b" :foreground "#FFFFFF"))))
-   `(magit-section-title ((,class (:foreground ,"#f0dfaf" :weight bold))))
-   `(magit-branch ((,class (:foreground ,"#dfaf8f" :weight bold))))
+   `(magit-item-highlight ((t (:foreground ,"#FFFFFF" :background ,"gray20" ))))
+   `(magit-section-title ((,class (:foreground ,"#FFFFFF" :background ,"gray20" :weight bold))))
+   `(magit-branch ((,class (:foreground ,"#FFFFFF" background ,"gray20" :weight bold))))
 
    ;; Flyspell faces
    `(flyspell-duplicate ((,class (:underline ,orange-1))))
