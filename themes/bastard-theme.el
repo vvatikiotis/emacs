@@ -41,17 +41,18 @@ Semantic, and Ansi-Color faces are included.")
       (alum-4 "#888a85") (alum-5 "#555753") (alum-6 "#2e3436")
       ;; Not in Tango palette; used for better contrast.
       (cham-0 "#b4fa70") (blue-0 "#8cc4ff") (plum-0 "#e6a8df")
-      (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#212526"))
+      (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#212526")
+      (black "#000000"))
 
   (custom-theme-set-faces
    'bastard
    ;; Ensure sufficient contrast on low-color terminals.
-   `(default ((((class color) (min-colors 4096))
-	       (:foreground ,"#FFFFFF" :background , "#1B1B1B"))
-	      (((class color) (min-colors 256))
-	       (:foreground ,alum-1 :background "111111"))
-	      (,class
-	       (:foreground ,alum-1 :background "black"))))
+   ;; `(default ((((class color) (min-colors 4096))
+   ;;             (:foreground ,"#FFFFFF" :background ,black))
+   ;;            (((class color) (min-colors 256))
+   ;;             (:foreground ,alum-1 :background ,black))
+   ;;            (,class
+   ;;             (:foreground ,alum-1 :background ,black))))
    `(cursor ((,class (:background ,butter-1))))
 
    ;; Highlighting faces
