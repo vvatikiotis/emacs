@@ -2,12 +2,9 @@
   '(("js" . "/usr/local/bin/node -e")
     ("javascript-mode" . "/usr/local/bin/node -e")
     ("js-mode" . "/usr/local/bin/node -e")
-
     ("rb" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby -e")
     ("ruby-mode" . "/Users/vatikiot/.rvm/bin/rvm-auto-ruby -e")
-
     ("coffee-mode" . "/usr/local/share/npm/bin/coffee -e")
-
     ("clj" . "/Users/vatikiot/local/bin/clojure")
     ("clojure-mode" . "/Users/vatikiot/local/bin/clojure")))
 

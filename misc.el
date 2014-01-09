@@ -9,7 +9,7 @@
 
 ;;(server-start)
 
-;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -58,7 +58,9 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (mouse-wheel-mode t)
-  (blink-cursor-mode -1))
+  (blink-cursor-mode -1)
+  (menu-bar-mode t)
+)
 
 (add-hook 'before-make-frame-hook 'turn-off-tool-bar)
 
