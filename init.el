@@ -5,6 +5,8 @@
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/kits")
+(let ((default-directory "~/.emacs.d/submodules/"))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; emacs-repos declares the package repos
 ;; place it first!
@@ -56,7 +58,7 @@
 ;; pair programming mode
 (require 'lockstep)
 
-; 
+;; projectile
 (projectile-global-mode)
 
 (provide 'init)

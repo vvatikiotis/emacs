@@ -1,3 +1,0 @@
-[submodule "submodules/emacs-dirtree"]
-	path = submodules/emacs-dirtree
-	url = https://github.com/zk/emacs-dirtree.git
