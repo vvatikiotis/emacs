@@ -8,6 +8,9 @@
 (let ((default-directory "~/.emacs.d/submodules/"))
   (normal-top-level-add-subdirs-to-load-path))
 
+;; deprecations
+(defalias 'make-local-hook 'ignore)
+
 ;; emacs-repos declares the package repos
 ;; place it first!
 (load-library "emacs-repos") ;; looks up in the load-path var
@@ -24,6 +27,7 @@
 (exec-path-from-shell-initialize)
 ;;)
 
+(require 'sr-speedbar)
 (require 'mode-line-format)
 (require 'defuns)
 (require 'emacs-lisp-kit)

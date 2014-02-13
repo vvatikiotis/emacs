@@ -52,6 +52,9 @@
  whitespace-line-column 100
  ediff-window-setup-function 'ediff-setup-windows-plain
  xterm-mouse-mode t
+ 
+ ;; speedbar
+ speedbar-toggle-show-all-files t
  )
 
 (when window-system

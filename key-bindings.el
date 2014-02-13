@@ -16,6 +16,8 @@
 )
 ;(mac-switch-meta)
 
+;; speedbar
+(global-set-key (kbd "C-t") 'sr-speedbar-toggle)
 
 ;; Align your code in a pretty way.
 (global-set-key (kbd "C-x \\") 'align-regexp)
