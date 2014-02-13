@@ -56,5 +56,8 @@
 ;; pair programming mode
 (require 'lockstep)
 
+; 
+(projectile-global-mode)
+
 (provide 'init)
 ;;; init.el ends here
