@@ -36,7 +36,7 @@
 (require 'javascript-kit)
 (require 'coffeescript-kit)
 (require 'css-kit)
-(require 'scss-kit)
+;;(require 'scss-kit)
 (require 'markdown-kit)
 (require 'eval-buffer)
 (require 'eshell-kit)
